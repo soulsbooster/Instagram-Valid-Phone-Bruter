@@ -7,6 +7,7 @@ import random
 import threading
 from queue import Queue
 import socket
+from sys import argv
 
 threads_count = 40
 socket.setdefaulttimeout(5)
@@ -64,16 +65,16 @@ class myThread(threading.Thread):
             low_lim = int(acc.split(":")[0])
             high_lim = int(acc.split(":")[1])
             for x in range(low_lim, high_lim+1):
-                print(x)
+                print(str(x)+argv[1])
                 try:
-                    out = json.loads(self.is_insta_acc("+"+str(x)+self.args[0]))
+                    out = json.loads(self.is_insta_acc("+"+str(x)+argv[1]))
                     ans = out['user']
                 except:
                     ans = "False"
                 if str(ans) == "True":
                     print("good")
                     with open("success.txt", "a+") as suc_file:
-                        suc_file.write("+" + str(x) + "\n")
+                        suc_file.write("+" + str(x) + argv[1] + "\n")
             self.queue.task_done()
 
 if __name__ == "__main__":
