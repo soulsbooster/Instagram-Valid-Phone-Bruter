@@ -71,6 +71,7 @@ class myThread(threading.Thread):
                 except:
                     ans = "False"
                 if str(ans) == "True":
+                    print("good")
                     with open("success.txt", "a+") as suc_file:
                         suc_file.write("+" + str(x) + "\n")
             self.queue.task_done()
