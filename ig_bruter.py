@@ -25,8 +25,7 @@ class myThread(threading.Thread):
         url = "https://www.instagram.com/accounts/login/ajax/"
         params = {
             "username": cred,
-            "password": self.rand_pass(),
-            "enc_password": "",
+            "enc_password": "#PWD_INSTAGRAM_BROWSER:9:1594038549:AVdQAFYARyjVDVdsDuvQBvOZTfOuTaXSqWDboo3rlMZxTSEaPP/LzdcKsQn3x3Fii+WVRciyUpMlkjJi81KH2FE/fYV5emI9h7u8cINWVoWNKGF5ajvCLWqinVIfLgjsWO0xMXPLZxbYtoGDiC4SOMqxGPc=",
             "queryParams": "{\"source\":\"auth_switcher\"}",
             "optIntoOneTap": "false"
             }
